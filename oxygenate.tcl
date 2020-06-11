@@ -6,6 +6,7 @@ proc oxygenate {mol0 name} {
   # Both PSF and PDB of system are required.
     
     # Calculate volume
+    # - This calculation is approximate and I expect it to over approximate
     set minmax0 [measure minmax [atomselect $mol0 all]]
     set dims0 [vecsub [lindex $minmax0 1] [lindex $minmax0 0]]
     puts [format "Dimensions | x: %.03f y: %.03f z: %.03f" [lindex $dims0 0] [lindex $dims0 1] [lindex $dims0 2]]
